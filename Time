@@ -1,14 +1,40 @@
-class time {
-	int hour;
-	int minute;
+class Time {
+	private int hour;
+	private int minute;
 	
-	time() {}
-
+	Time(int hour, int minute){
+		setHour(hour);
+		setMinute(minute);
+	}
+	
+	public void exibir(){
+		System.out.printf("The time now is %d:%d", getHour(), getMinute());
+	}
+	
+	public void setHour(int hour){
+		this.hour = hour;
+	}
+	
+	public void setMinute(int minute){
+		this.minute = minute;
+	}
+	
+	public int getHour(){
+		return this.hour;
+	}
+	
+	public int getMinute(){
+		return this.minute;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		time t = new time();
-		t.hour = 3;
-		t.minute = 25;
-		System.out.println("The time now is " + t.hour + ":" + t.minute);
+		int hour = 3;
+		int minute = 25;
+		
+		Time t = new Time(hour, minute);
+		
+		t.exibir();
 	}
+
 }
